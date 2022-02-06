@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous" >
+        <script type="text/javascript" src="calculo.js"></script>
+        <title>Calculo IMC</title>
+        <link rel="stylesheet" type = "text/css" href="estiloimc.css"> 
+    </head>
+    <html>
+        <body >
+            <br>
+            <br>
+            <div class="container" align="center">
+                <div class="col-6">
+                    <div class="container bg-dark text-white">
+                        <h1> Calculadora IMC </h1>
+                        <br>
+                        <form name="alumno" method="post">
+                            <label for="alumno" align="center">Seleccione Alumno</label>
+                            <select name="alumno" class="form-control" id="alumno" onChange="mostrarMas()">
+                                <option value="no"> Seleccione Alumno </option>
+                                <option value="1"> 12232898-1 -- Mario Rios </option>
+                                <option value="1"> 11909029-2 -- Marcos Globo</option>
+                                <option value="1">14389843-3 -- Mario Catalan </option>
+                                <option value="1">12545989-4 -- Marcos Montes</option>
+                            </select>
+                        </form>
+                        <br>
+                        <div id="masElementos" style="display: none">
+                           <form id="form" onsubmit="return calcularImc();">
+                                <p>Fecha de evaluación</p>
+                                <script>
+                                var f = new Date();
+                                document.write(f.getDate() + "/" + (f.getMonth() + 1) + "/" + f.getFullYear());
+                                </script>
+                                <br>
+                                <br>
+                                <input type="radio" name="radio" id="f"><label class="text">Femenino</label>
+                                <span class="checkmark"></span>
+                                <label class="container">
+                                <input type="radio" name="radio" id="m"><label class="text">Masculino</label>
+                                <span class="checkmark"></span>
+                                </label>
+                                <label for="altura">Escribe tu ALTURA actual (cm):</label>
+                                <input class="form-control" type="text" id="altura" required="required">
+                                <br>
+                                <label for="peso"> Escribe tu PESO actual (kg):</label>
+                                <input class="form-control" type="text" id="peso" required="required">
+                                <br>
+                                <button id="resultado" type="submit">Calcular IMC</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Optional JavaScript; choose one of the two! -->
+
+            <!-- Option 1: Bootstrap Bundle with Popper -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+            crossorigin="anonymous"></script>
+
+            <!-- Option 2: Separate Popper and Bootstrap JS -->
+            <!--
+                    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+            -->
+        </body>
+
+    </html>
